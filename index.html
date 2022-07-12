@@ -18,11 +18,14 @@
 
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
 
     <script defer src="assets/js/script.js"></script>
     <title>Gabriel Pessoa - Portfolio</title>
   </head>
   <body>
+    <!-- Scroll Top Button -->
+    <button class="btn-scroll-top"><i class="ph-caret-up"></i></button>
     <!-- Header & Nav -->
     <header class="header-container">
       <div class="header-title-wrapper">
@@ -38,10 +41,10 @@
       </button>
       <nav class="header-nav">
         <ul class="nav-items">
-          <li class="active"><a href="#">.inicio()</a></li>
-          <li><a href="#">.sobreMim()</a></li>
-          <li><a href="#">.projetos()</a></li>
-          <li><a href="#">.contato()</a></li>
+          <li class="active"><a href="#home">.inicio()</a></li>
+          <li><a href="#aboutme">.sobreMim()</a></li>
+          <li><a href="#projects">.projetos()</a></li>
+          <li><a href="#contact">.contato()</a></li>
           <li>
             <button>
               <span
@@ -55,7 +58,8 @@
       </nav>
     </header>
     <main>
-      <div>
+      <!-- Main Section -->
+      <div id="home">
         <div class="section section-main">
           <div class="social-buttons">
             <span
@@ -83,35 +87,38 @@
                   as tendências atuais
                 </div>
               </div>
-              <button class="btn btn-section-main">
+              <a href="#contact" class="btn btn-section-main">
                 Entre em contato<i class="ph-paper-plane-tilt"></i>
-              </button>
+              </a>
             </div>
             <img src="assets/images/illustration.svg" />
           </div>
         </div>
       </div>
-      <hr />
+      <hr id="projects" />
+      <!-- Projects Section -->
       <section class="section">
         <h1>Projetos</h1>
         <div class="card-container">
           <i class="carret ph-caret-left"></i>
-          <div class="card">
-            <img src="assets/images/placeholder.png" />
-            <div class="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              velit nunc aliquet senectus integer amet tellus. Mauris rhoncus
-              facilisis ut accumsan, parturient dolor netus nunc. In est
-              adipiscing.
+          <div class="card-wrapper">
+            <div class="card">
+              <img src="assets/images/placeholder.png" />
+              <div class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                velit nunc aliquet senectus integer amet tellus. Mauris rhoncus
+                facilisis ut accumsan, parturient dolor netus nunc. In est
+                adipiscing.
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="assets/images/placeholder.png" />
-            <div class="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              velit nunc aliquet senectus integer amet tellus. Mauris rhoncus
-              facilisis ut accumsan, parturient dolor netus nunc. In est
-              adipiscing.
+            <div class="card">
+              <img src="assets/images/placeholder.png" />
+              <div class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                velit nunc aliquet senectus integer amet tellus. Mauris rhoncus
+                facilisis ut accumsan, parturient dolor netus nunc. In est
+                adipiscing.
+              </div>
             </div>
           </div>
           <i class="carret ph-caret-right"></i>
@@ -120,16 +127,92 @@
           <button class="btn">Ver mais<i class="ph-info"></i></button>
         </div>
       </section>
-      <hr />
+      <hr id="aboutme" />
+      <!-- About Me Section -->
       <section class="section">
         <h1>Sobre Mim</h1>
-        <span class="aboutme"
-          >Tenho 19 anos e estou iniciando minha carreira na área de
-          desenvolvimento.<br />Meu foco atualmente é no front-end e UI/UX
-          design. Sou perfeccionista e sempre busco realizar interfaces bonitas,
-          modernas e funcionais.</span
-        >
+        <div class="aboutme">
+          Tenho 19 anos e estou iniciando minha carreira na área de
+          desenvolvimento. Meu foco atualmente é no front-end e UI/UX design.
+          Sou perfeccionista e sempre busco realizar interfaces bonitas,
+          modernas e funcionais.
+        </div>
+      </section>
+      <hr id="contact" />
+      <!-- Contact Section -->
+      <section class="section">
+        <h1>Contato</h1>
+        <div class="form-container">
+          <div class="contact-form">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" autocomplete="off" />
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" />
+            <label for="nomeProjeto">Nome do Projeto</label>
+            <input type="text" name="nomeProjeto" id="nomeProjeto" />
+            <label for="descProjeto">Descrição do Projeto</label>
+            <textarea
+              name="descProjeto"
+              id="descProjeto"
+              cols="30"
+              rows="5"
+            ></textarea>
+            <a class="btn btn-whatsapp">
+              Enviar<i class="ph-whatsapp-logo"></i>
+            </a>
+          </div>
+          <div class="contact-info">
+            <div class="info">
+              <i class="ph-whatsapp-logo"></i>
+              <span>+55 (44) 9 9818-2849</span>
+            </div>
+            <div class="info">
+              <i class="ph-envelope"></i>
+              <span>gabrielsouzapessoa@gmail.com</span>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-title">
+          <span>Gabriel Pessoa</span>
+          <span>&lt;Web Developer&gt;</span>
+        </div>
+        <div class="social-items-container">
+          <div class="social-items">
+            <a href="https://github.com/gabrielspessoa" class="item">
+              <span
+                class="iconify"
+                data-icon="codicon:github-alt"
+                data-width="24"
+              ></span>
+              <span>Github</span>
+            </a>
+            <a href="https://www.linkedin.com/in/gabrielspessoa/" class="item">
+              <span
+                class="iconify"
+                data-icon="eva:linkedin-outline"
+                data-width="24"
+              ></span>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <div class="social-items">
+            <a href="https://wa.me/5544998182849" class="item">
+              <i class="ph-whatsapp-logo"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="mailto:gabrielsouzapessoa@gmail.com" class="item">
+              <i class="ph-envelope"></i>
+              <span>E-mail</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copy">Copyright © 2022 Gabriel Pessoa</div>
+    </footer>
   </body>
 </html>

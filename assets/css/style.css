@@ -2,6 +2,7 @@
 
 html {
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 *:focus {
@@ -192,13 +193,18 @@ Section Main
 Section Projects
 ================
 */
-
 .card-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
   margin-bottom: 34px;
+}
+
+.card-wrapper {
+  display: flex;
+  gap: 24px;
+  max-width: 100%;
 }
 
 .carret {
@@ -231,6 +237,175 @@ Section Projects
 .btn-wrapper {
   display: flex;
   justify-content: center;
+}
+
+/*
+================
+Section About Me
+================
+*/
+.aboutme {
+  width: 760px;
+  margin: 0 auto;
+  color: #5b5b5b;
+}
+
+/*
+===============
+Section Contact
+===============
+*/
+.form-container {
+  width: 760px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 82px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 368px;
+}
+
+.contact-form label {
+  color: #5b5b5b;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+textarea {
+  font-family: 'Lato';
+  line-height: 18px;
+  padding: 12px 14px;
+  border: solid 2px transparent;
+  border-radius: 6px;
+  background: #e4e4e4;
+  margin-bottom: 8px;
+  resize: none;
+  transition: border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.contact-form input:hover,
+textarea:hover {
+  border: solid 2px #d3d3d3;
+}
+
+.contact-form input:focus,
+textarea:focus {
+  background-color: #fff;
+  border: solid 2px #363636;
+}
+
+.contact-form input:-webkit-autofill,
+textarea:-webkit-autofill {
+  border: solid 2px #e4e4e4;
+  box-shadow: 0 0 0 30px #e4e4e4 inset;
+  -webkit-box-shadow: 0 0 0 30px #e4e4e4 inset;
+}
+
+.contact-form input:-webkit-autofill:hover {
+  border: solid 2px #d3d3d3;
+}
+
+.contact-form input:-webkit-autofill:focus {
+  box-shadow: 0 0 0 30px #fff inset;
+  -webkit-box-shadow: 0 0 0 30px #fff inset;
+  border: solid 2px #363636;
+}
+
+.btn.btn-whatsapp {
+  margin-top: 10px;
+  background-color: #47c758;
+  align-self: end;
+  outline-offset: 2px;
+  outline: solid 2px transparent;
+}
+
+.btn.btn-whatsapp:active {
+  background-color: #309c3e;
+}
+
+.btn.btn-whatsapp:focus {
+  outline: solid 2px #47c758;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  margin-top: 32px;
+}
+
+.contact-info i {
+  font-size: 32px;
+}
+
+.contact-info .info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 
+======
+Footer
+======
+*/
+footer {
+  background-color: #5f22d9;
+  font-size: 14px;
+  color: #fff;
+  padding: 96px 144px 34px 144px;
+}
+
+.footer-container {
+  display: flex;
+  margin-bottom: 96px;
+}
+
+.footer-title {
+  font-family: 'Jetbrains Mono', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  margin-right: 330px;
+}
+
+.footer-title span:last-child {
+  color: #e4e4e4;
+}
+
+.social-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.social-items-container {
+  display: flex;
+  width: 100%;
+  gap: 200px;
+}
+
+.social-items .item {
+  display: flex;
+  gap: 12px;
+}
+
+.social-items .item span {
+  line-height: 24px;
+}
+
+.social-items .item i {
+  font-size: 24px;
+}
+
+.footer-copy {
+  text-align: center;
 }
 
 /* 
@@ -268,23 +443,57 @@ hr {
   cursor: pointer;
   user-select: none;
   transition: outline 0.15s ease-in-out;
+  width: fit-content;
+  outline-offset: 2px;
+  outline: solid 2px transparent;
 }
 
 .btn:active {
   background-color: #5323b3;
 }
 
-.btn-section-main {
-  outline-offset: 2px;
-  outline: solid 2px transparent;
-}
-
-.btn-section-main:focus {
+.btn:focus {
   outline: solid 2px #5f22d9;
 }
 
 .btn i {
   font-size: 24px;
+}
+
+.btn-scroll-top {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  display: flex;
+  background-color: #8757e5;
+  border: 0;
+  padding: 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 8px #00000073;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out,
+    bottom 0.15s ease-in-out;
+}
+
+.btn-scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.btn-scroll-top:hover {
+  bottom: 36px;
+}
+
+.btn-scroll-top i {
+  font-size: 32px;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
 }
 
 /* 
