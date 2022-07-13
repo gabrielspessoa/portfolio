@@ -19,7 +19,16 @@
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
+      integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
+    <script>
+      if (localStorage.getItem('dark')) $('html').addClass('dark');
+    </script>
     <script defer src="assets/js/script.js"></script>
     <title>Gabriel Pessoa - Portfolio</title>
   </head>
@@ -46,7 +55,7 @@
           <li><a href="#projects">.projetos()</a></li>
           <li><a href="#contact">.contato()</a></li>
           <li>
-            <button>
+            <button id="dark-toggler">
               <span
                 class="iconify"
                 data-icon="akar-icons:moon-fill"
@@ -62,16 +71,18 @@
       <div id="home">
         <div class="section section-main">
           <div class="social-buttons">
-            <span
-              class="iconify"
-              data-icon="entypo-social:linkedin-with-circle"
-              style="color: #ad72fe; font-size: 46px"
-            ></span>
-            <span
-              class="iconify"
-              data-icon="codicon:github-inverted"
-              style="color: #ad72fe; font-size: 46px"
-            ></span>
+            <a href="https://www.linkedin.com/in/gabrielspessoa/">
+              <span
+                class="iconify social-icon"
+                data-icon="entypo-social:linkedin-with-circle"
+              ></span>
+            </a>
+            <a href="https://github.com/gabrielspessoa">
+              <span
+                class="iconify social-icon"
+                data-icon="codicon:github-inverted"
+              ></span>
+            </a>
           </div>
           <div class="title-image-wrapper">
             <div class="section-title-wrapper">
@@ -99,7 +110,7 @@
       <!-- Projects Section -->
       <section class="section">
         <h1>Projetos</h1>
-        <div class="card-container">
+        <!-- <div class="card-container">
           <i class="carret ph-caret-left"></i>
           <div class="card-wrapper">
             <div class="card">
@@ -122,9 +133,11 @@
             </div>
           </div>
           <i class="carret ph-caret-right"></i>
-        </div>
+        </div> -->
         <div class="btn-wrapper">
-          <button class="btn">Ver mais<i class="ph-info"></i></button>
+          <button class="btn btn-section-projects">
+            Ver mais<i class="ph-info"></i>
+          </button>
         </div>
       </section>
       <hr id="aboutme" />
@@ -132,10 +145,15 @@
       <section class="section">
         <h1>Sobre Mim</h1>
         <div class="aboutme">
-          Tenho 19 anos e estou iniciando minha carreira na área de
-          desenvolvimento. Meu foco atualmente é no front-end e UI/UX design.
-          Sou perfeccionista e sempre busco realizar interfaces bonitas,
-          modernas e funcionais.
+          <p>
+            Tenho 19 anos e estou iniciando minha carreira na área de
+            desenvolvimento.
+          </p>
+          <p>
+            Meu foco atualmente é no front-end e UI/UX design. Sou
+            perfeccionista e sempre busco realizar interfaces bonitas, modernas
+            e funcionais.
+          </p>
         </div>
       </section>
       <hr id="contact" />

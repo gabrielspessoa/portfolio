@@ -1,8 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Lato:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
+:root {
+  --green-primary: #47c758;
+  --green-secondary: #309c3e;
+  --primary: #00a8ff;
+  --secondary: #008bd1;
+}
+
+/* Light Vars */
+:root:not(.dark) {
+  --background: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #5b5b5b;
+  --gray-primary: #e4e4e4;
+  --gray-secondary: #c2c2c2;
+}
+
+/* Dark Vars */
+:root.dark {
+  --background: #18181b;
+  --text-primary: #f4f4f5;
+  --text-secondary: #bbbbbb;
+  --gray-primary: #3f3f46;
+  --gray-secondary: #71717a;
+}
+
 html {
   font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--text-primary);
 }
 
 *:focus {
@@ -38,14 +64,14 @@ Header
 
 .header-title {
   margin: 0;
-
+  white-space: nowrap;
   font-size: 18px;
   font-weight: 500;
 }
 
 .header-subtitle {
   font-weight: 400;
-  color: #5b5b5b;
+  color: var(--text-secondary);
 }
 
 .hamburger {
@@ -56,6 +82,7 @@ Header
   border: 0;
   padding: 6px;
   z-index: 20;
+  color: var(--text-primary);
 }
 
 .hamburger svg {
@@ -65,6 +92,7 @@ Header
 .header-nav {
   display: flex;
   align-items: center;
+  background-color: var(--background);
 }
 
 .nav-items {
@@ -83,7 +111,7 @@ Header
   display: block;
 
   text-decoration: none;
-  color: #000;
+  color: var(--text-primary);
   line-height: 21px;
   width: 100%;
 }
@@ -92,7 +120,7 @@ Header
   content: '';
   display: block;
 
-  background-color: #5f22d9;
+  background-color: var(--primary);
   height: 2px;
 
   transform: scale(0%);
@@ -104,7 +132,7 @@ Header
 }
 
 .nav-items .active a {
-  color: #5f22d9;
+  color: var(--primary);
 }
 
 .nav-items button {
@@ -113,12 +141,13 @@ Header
   padding: 6px;
   border-radius: 999px;
   cursor: pointer;
+  color: var(--text-primary);
 
   transition: background-color 0.15s ease-in-out;
 }
 
 .nav-items button:hover {
-  background-color: #e4e4e4;
+  background-color: var(--gray-primary);
 }
 
 .nav-items svg {
@@ -144,6 +173,11 @@ Section Main
   gap: 44px;
 }
 
+.social-icon {
+  color: var(--primary);
+  font-size: 46px;
+}
+
 .title-image-wrapper {
   display: flex;
   justify-content: space-between;
@@ -165,7 +199,7 @@ Section Main
 .section-subtitle {
   font-size: 16px;
   font-weight: 500;
-  color: #5b5b5b;
+  color: var(--text-secondary);
   line-height: 24px;
   margin-bottom: 42px;
 }
@@ -178,7 +212,7 @@ Section Main
 
 .section-title div:last-child {
   font-weight: 500;
-  color: #5f22d9;
+  color: var(--primary);
 }
 
 .title-image-wrapper > img {
@@ -247,7 +281,7 @@ Section About Me
 .aboutme {
   width: 760px;
   margin: 0 auto;
-  color: #5b5b5b;
+  color: var(--text-secondary);
 }
 
 /*
@@ -270,7 +304,7 @@ Section Contact
 }
 
 .contact-form label {
-  color: #5b5b5b;
+  color: var(--text-secondary);
   margin-bottom: 6px;
 }
 
@@ -281,7 +315,8 @@ textarea {
   padding: 12px 14px;
   border: solid 2px transparent;
   border-radius: 6px;
-  background: #e4e4e4;
+  background: var(--gray-primary);
+  color: var(--text-primary);
   margin-bottom: 8px;
   resize: none;
   transition: border 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -289,46 +324,47 @@ textarea {
 
 .contact-form input:hover,
 textarea:hover {
-  border: solid 2px #d3d3d3;
+  border: solid 2px var(--gray-secondary);
 }
 
 .contact-form input:focus,
 textarea:focus {
-  background-color: #fff;
-  border: solid 2px #363636;
+  background-color: var(--background);
+  border: solid 2px var(--gray-secondary);
 }
 
 .contact-form input:-webkit-autofill,
 textarea:-webkit-autofill {
-  border: solid 2px #e4e4e4;
-  box-shadow: 0 0 0 30px #e4e4e4 inset;
-  -webkit-box-shadow: 0 0 0 30px #e4e4e4 inset;
+  border: solid 2px var(--gray-primary);
+  -webkit-text-fill-color: var(--text-primary);
+  box-shadow: 0 0 0 30px var(--gray-primary) inset;
+  -webkit-box-shadow: 0 0 0 30px var(--gray-primary) inset;
 }
 
 .contact-form input:-webkit-autofill:hover {
-  border: solid 2px #d3d3d3;
+  border: solid 2px var(--gray-secondary);
 }
 
 .contact-form input:-webkit-autofill:focus {
-  box-shadow: 0 0 0 30px #fff inset;
-  -webkit-box-shadow: 0 0 0 30px #fff inset;
-  border: solid 2px #363636;
+  box-shadow: 0 0 0 30px var(--background) inset;
+  -webkit-box-shadow: 0 0 0 30px var(--background) inset;
+  border: solid 2px var(--gray-secondary);
 }
 
 .btn.btn-whatsapp {
   margin-top: 10px;
-  background-color: #47c758;
+  background-color: var(--green-primary);
   align-self: end;
   outline-offset: 2px;
   outline: solid 2px transparent;
 }
 
 .btn.btn-whatsapp:active {
-  background-color: #309c3e;
+  background-color: var(--green-secondary);
 }
 
 .btn.btn-whatsapp:focus {
-  outline: solid 2px #47c758;
+  outline: solid 2px var(--green-primary);
 }
 
 .contact-info {
@@ -354,9 +390,10 @@ Footer
 ======
 */
 footer {
-  background-color: #5f22d9;
+  background-color: var(--primary);
   font-size: 14px;
-  color: #fff;
+  font-weight: 500;
+  color: #000;
   padding: 96px 144px 34px 144px;
 }
 
@@ -376,7 +413,7 @@ footer {
 }
 
 .footer-title span:last-child {
-  color: #e4e4e4;
+  color: rgb(22, 22, 22);
 }
 
 .social-items {
@@ -428,13 +465,15 @@ hr {
   margin: 60px auto;
   width: 368px;
   border: 0;
-  border-bottom: solid 1px #e4e4e4;
+  border-bottom: solid 1px var(--gray-primary);
 }
 
 .btn {
-  background-color: #5f22d9;
+  background-color: var(--primary);
   color: #fff;
+  font-weight: 500;
   display: flex;
+  justify-content: center;
   gap: 12px;
   border: 0;
   border-radius: 6px;
@@ -446,14 +485,15 @@ hr {
   width: fit-content;
   outline-offset: 2px;
   outline: solid 2px transparent;
+  box-sizing: border-box;
 }
 
 .btn:active {
-  background-color: #5323b3;
+  background-color: var(--secondary);
 }
 
 .btn:focus {
-  outline: solid 2px #5f22d9;
+  outline: solid 2px var(--primary);
 }
 
 .btn i {
@@ -465,7 +505,7 @@ hr {
   right: 32px;
   bottom: 32px;
   display: flex;
-  background-color: #8757e5;
+  background-color: var(--secondary);
   border: 0;
   padding: 12px;
   border-radius: 999px;
@@ -501,7 +541,7 @@ a {
 General Media Queries
 =====================
 */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 767px) {
   hr {
     width: 226px;
   }
@@ -516,10 +556,11 @@ General Media Queries
 Header Media Queries 
 ====================
 */
+
 @media screen and (max-width: 1024px) {
   .header-container {
     flex-direction: column;
-    margin: 18px 16px 42px 16px;
+    margin: 30px 72px 110px 72px;
   }
 
   .header-nav {
@@ -531,7 +572,7 @@ Header Media Queries
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    background-color: #fff;
+    /* background-color: #fff; */
     z-index: 10;
     padding: 42px 0;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
@@ -551,18 +592,30 @@ Header Media Queries
   }
 }
 
+@media screen and (max-width: 767px) {
+  .header-container {
+    margin: 18px 16px 42px 16px;
+  }
+}
+
 /*
 ==========================
 Section Main Media Queries
 ==========================
 */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .title-image-wrapper img {
     display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section-main {
+    height: fit-content;
   }
 
   .section-title-wrapper {
     width: 100%;
+    max-width: unset;
   }
 
   .section-title {
@@ -594,3 +647,77 @@ Section Main Media Queries
 Section Projects Media Queries
 ==============================
 */
+@media screen and (max-width: 767px) {
+  .btn-section-projects {
+    width: 100%;
+  }
+}
+
+/*
+==============================
+Section About Me Media Queries
+==============================
+*/
+@media screen and (max-width: 767px) {
+  .aboutme {
+    width: 100%;
+    text-align: justify;
+  }
+}
+
+/*
+==============================
+Section Contacts Media Queries
+==============================
+*/
+@media screen and (max-width: 767px) {
+  .form-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-info .info {
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+
+  .contact-info .info i {
+    font-size: 24px;
+  }
+
+  .btn.btn-whatsapp {
+    justify-self: unset;
+    width: 100%;
+  }
+}
+
+/*
+==============================
+Footer Media Queries
+==============================
+*/
+@media screen and (max-width: 767px) {
+  footer {
+    padding: 30px 16px;
+  }
+
+  .footer-title {
+    margin-right: 0;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    margin-bottom: 36px;
+  }
+
+  .social-items-container {
+    gap: 0;
+    justify-content: space-between;
+  }
+}

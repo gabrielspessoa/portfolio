@@ -1,18 +1,20 @@
 // Menu Toggler
 
-const hamburgerBtn = document.querySelector('.hamburger');
-const headerNav = document.querySelector('.header-nav');
+const hamburgerBtn = $('.hamburger');
+const headerNav = $('.header-nav');
 
 const handleHamburgerClick = (e) => {
-  if (headerNav.classList.contains('active'))
-    headerNav.classList.remove('active');
-  else headerNav.classList.add('active');
+  if (headerNav.hasClass('active')) headerNav.removeClass('active');
+  else headerNav.addClass('active');
 };
 
-hamburgerBtn.addEventListener('click', handleHamburgerClick);
-window.addEventListener('click', (e) => {
-  if (!headerNav.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-    headerNav.classList.remove('active');
+hamburgerBtn.on('click', handleHamburgerClick);
+$(window).on('click', (e) => {
+  if (
+    !headerNav.has(e.target).length != 0 &&
+    !hamburgerBtn.has(e.target).length != 0
+  ) {
+    headerNav.removeClass('active');
   }
 });
 
@@ -28,7 +30,7 @@ window.addEventListener('scroll', () => {
 });
 
 btnScrollTop.click(() => {
-  $('html, body').animate({ scrollTop: 0 }, 400);
+  $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuad');
 });
 
 // Smooth Anchor Scroll
@@ -46,7 +48,8 @@ $(document).on('click', 'a[href^="#"]', function (e) {
 
   var pos = $id.offset().top;
 
-  $('body, html').animate({ scrollTop: pos });
+  headerNav.removeClass('active');
+  $('body, html').animate({ scrollTop: pos }, 400, 'easeOutQuad');
 });
 
 // WhatsApp Form
@@ -71,3 +74,18 @@ function submitWhatsAppMessage() {
 }
 
 $('.btn-whatsapp').on('click', submitWhatsAppMessage);
+
+// Dark Mode Toggler
+
+function toggleDarkMode() {
+  let htmlElement = $('html');
+  if (htmlElement.hasClass('dark')) {
+    htmlElement.removeClass('dark');
+    localStorage.removeItem('dark');
+  } else {
+    htmlElement.addClass('dark');
+    localStorage.setItem('dark', 'enabled');
+  }
+}
+
+$('#dark-toggler').on('click', toggleDarkMode);
