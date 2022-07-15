@@ -192,6 +192,21 @@ Section Main
   line-height: 60px;
 }
 
+.section-title .blinking-cursor {
+  user-select: none;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: inherit;
+  }
+}
+
 .section-title-wrapper {
   max-width: 440px;
 }
