@@ -26,6 +26,15 @@
       referrerpolicy="no-referrer"
     ></script>
 
+    <!-- Lottie -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"
+      integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="assets/js/lottie-icons.js"></script>
+
     <script>
       if (localStorage.getItem('dark')) $('html').addClass('dark');
     </script>
@@ -41,13 +50,7 @@
         <h1 class="header-title">Gabriel Pessoa</h1>
         <div class="header-subtitle">&lt;Web Developer&gt;</div>
       </div>
-      <button class="hamburger">
-        <span
-          class="iconify"
-          data-icon="charm:menu-hamburger"
-          data-width="24"
-        ></span>
-      </button>
+      <button class="hamburger" id="menu"></button>
       <nav class="header-nav">
         <ul class="nav-items">
           <li class="active"><a href="#home">.inicio()</a></li>
@@ -55,13 +58,7 @@
           <li><a href="#projects">.projetos()</a></li>
           <li><a href="#contact">.contato()</a></li>
           <li>
-            <button id="dark-toggler">
-              <span
-                class="iconify"
-                data-icon="akar-icons:moon-fill"
-                data-width="21"
-              ></span>
-            </button>
+            <button id="dark-toggler"></button>
           </li>
         </ul>
       </nav>

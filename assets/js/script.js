@@ -4,8 +4,13 @@ const hamburgerBtn = $('.hamburger');
 const headerNav = $('.header-nav');
 
 const handleHamburgerClick = (e) => {
-  if (headerNav.hasClass('active')) headerNav.removeClass('active');
-  else headerNav.addClass('active');
+  if (headerNav.hasClass('active')) {
+    headerNav.removeClass('active');
+    menuAnimation.playSegments([15, 3], true);
+  } else {
+    headerNav.addClass('active');
+    menuAnimation.playSegments([3, 15], true);
+  }
 };
 
 hamburgerBtn.on('click', handleHamburgerClick);
@@ -14,6 +19,9 @@ $(window).on('click', (e) => {
     !headerNav.has(e.target).length != 0 &&
     !hamburgerBtn.has(e.target).length != 0
   ) {
+    if (headerNav.hasClass('active')) {
+      menuAnimation.playSegments([15, 3], true);
+    }
     headerNav.removeClass('active');
   }
 });
@@ -82,9 +90,11 @@ function toggleDarkMode() {
   if (htmlElement.hasClass('dark')) {
     htmlElement.removeClass('dark');
     localStorage.removeItem('dark');
+    sunMoonAnimation.playSegments([28, 14], true);
   } else {
     htmlElement.addClass('dark');
     localStorage.setItem('dark', 'enabled');
+    sunMoonAnimation.playSegments([14, 28], true);
   }
 }
 

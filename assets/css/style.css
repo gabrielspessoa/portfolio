@@ -77,16 +77,22 @@ Header
 .hamburger {
   visibility: hidden;
   position: absolute;
-  right: 0px;
+  right: 6px;
+  top: 6px;
   background-color: transparent;
   border: 0;
-  padding: 6px;
+  padding: 0;
   z-index: 20;
   color: var(--text-primary);
 }
 
 .hamburger svg {
   display: block;
+}
+
+.hamburger path {
+  color: var(--text-primary);
+  stroke: var(--text-primary);
 }
 
 .header-nav {
@@ -152,6 +158,16 @@ Header
 
 .nav-items svg {
   display: block;
+}
+
+#dark-toggler svg {
+  width: 21px !important;
+  height: 21px !important;
+}
+
+#dark-toggler path {
+  fill: var(--text-primary);
+  stroke: var(--text-primary);
 }
 
 /*
@@ -233,8 +249,24 @@ Section Main
 .title-image-wrapper > img {
   width: 380px;
   position: absolute;
+  top: 0;
   right: 0;
   z-index: -10;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /*
@@ -345,7 +377,7 @@ textarea:hover {
 .contact-form input:focus,
 textarea:focus {
   background-color: var(--background);
-  border: solid 2px var(--gray-secondary);
+  border: solid 2px var(--text-secondary);
 }
 
 .contact-form input:-webkit-autofill,
