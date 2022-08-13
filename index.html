@@ -15,6 +15,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
@@ -25,6 +26,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script defer src="assets/js/swiper.js"></script>
 
     <!-- Lottie -->
     <script
@@ -116,30 +121,29 @@
       <!-- Projects Section -->
       <section class="section">
         <h1>Projetos</h1>
-        <!-- <div class="card-container">
-          <i class="carret ph-caret-left"></i>
-          <div class="card-wrapper">
-            <div class="card">
-              <img src="assets/images/placeholder.png" />
-              <div class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                velit nunc aliquet senectus integer amet tellus. Mauris rhoncus
-                facilisis ut accumsan, parturient dolor netus nunc. In est
-                adipiscing.
+
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/images/placeholder.png" alt="" />
+                <div class="title">Pokédex</div>
+                <div class="description">Teste do projeto Pokédex.</div>
               </div>
             </div>
-            <div class="card">
-              <img src="assets/images/placeholder.png" />
-              <div class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                velit nunc aliquet senectus integer amet tellus. Mauris rhoncus
-                facilisis ut accumsan, parturient dolor netus nunc. In est
-                adipiscing.
+            <div class="swiper-slide">
+              <div class="card">
+                <img src="assets/images/placeholder.png" alt="" />
+                <div class="description">Teste</div>
               </div>
-            </div>
+            </div> -->
           </div>
-          <i class="carret ph-caret-right"></i>
-        </div> -->
+          <div class="swiper-pagination"></div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
         <div class="btn-wrapper">
           <button class="btn btn-section-projects">
             Ver mais<i class="ph-info"></i>
@@ -152,7 +156,7 @@
         <h1>Sobre Mim</h1>
         <div class="aboutme">
           <p>
-            Tenho 19 anos e estou iniciando minha carreira na área de
+            Tenho 20 anos e estou iniciando minha carreira na área de
             desenvolvimento.
           </p>
           <p>

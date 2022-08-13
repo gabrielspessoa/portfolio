@@ -274,45 +274,56 @@ Section Main
 Section Projects
 ================
 */
-.card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 34px;
+div.swiper {
+  max-width: 760px;
+  overflow-y: visible;
+  margin-bottom: 18px;
 }
 
-.card-wrapper {
-  display: flex;
-  gap: 24px;
-  max-width: 100%;
+.swiper-button-prev::after {
+  color: white;
 }
 
-.carret {
-  font-size: 32px;
-}
-
-.ph-caret-left {
-  margin-right: 8px;
-}
-
-.ph-caret-right {
-  margin-left: 8px;
+.swiper-button-next::after {
+  color: white;
 }
 
 .card {
-  width: 368px;
   height: 359px;
+  margin: 0 auto;
+  background-color: var(--gray-primary);
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
 }
 
 .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 12px 12px 0 0;
 }
 
+.card .title {
+  padding: 0 24px;
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .card .description {
+  padding: 0 24px;
+  font-family: 'Lato';
+}
+
+.card .error {
   padding: 24px;
+  color: rgb(255, 255, 255);
+}
+
+.swiper-slide:hover .card {
+  filter: brightness(1.2);
+  transform: scale(0.95);
 }
 
 .btn-wrapper {
@@ -696,6 +707,10 @@ Section Projects Media Queries
 */
 @media screen and (max-width: 767px) {
   .btn-section-projects {
+    width: 100%;
+  }
+
+  div.swiper {
     width: 100%;
   }
 }
