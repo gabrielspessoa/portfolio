@@ -1,8 +1,7 @@
 const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
   spaceBetween: 12,
-  centeredSlides: true,
-  centeredSlidesBounds: true,
+  watchOverflow: true,
 
   navigation: {
     nextEl: '.swiper-button-next',
@@ -12,11 +11,13 @@ const swiper = new Swiper('.swiper', {
   pagination: {
     el: '.swiper-pagination',
     type: 'bullets',
+    clickable: true,
   },
 
   breakpoints: {
     1024: {
       slidesPerView: 2,
+      slidesPerGroup: 2,
     },
   },
 });

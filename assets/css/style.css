@@ -281,11 +281,19 @@ div.swiper {
 }
 
 .swiper-button-prev::after {
-  color: white;
+  color: var(--primary);
 }
 
 .swiper-button-next::after {
-  color: white;
+  color: var(--primary);
+}
+
+.swiper-button-disabled::after {
+  visibility: hidden;
+}
+
+.swiper-button-disabled::after {
+  visibility: hidden;
 }
 
 .card {
